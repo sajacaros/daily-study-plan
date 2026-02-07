@@ -21,9 +21,17 @@ def get_today_plan(day_count):
     return match.group(1).strip() if match else None
 
 def send_to_discord():
+    print(f"--- 파이썬 실행 시작 ---")
     print(f"📌 설정된 시작일: {START_DATE_STR}")
+    
+    # 한국 시간(KST, UTC+9) 계산
+    curr_utc = datetime.datetime.now(datetime.timezone.utc)
+    curr_kst = curr_utc + datetime.timedelta(hours=9)
+    today = curr_kst.date() # 한국의 오늘 날짜
+    
+    print(f"📌 한국 기준 오늘 날짜: {today}")
+    
     start_date = datetime.date.fromisoformat(START_DATE_STR)
-    today = datetime.date.today()
     day_count = (today - start_date).days + 1
     print(f"📌 오늘 계산된 일차: {day_count}일차")
 
