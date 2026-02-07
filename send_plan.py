@@ -1,3 +1,5 @@
+print("--- 파이썬 실행 시작 ---")
+
 import requests
 import datetime
 import os
