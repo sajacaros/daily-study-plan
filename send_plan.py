@@ -7,7 +7,7 @@ import re
 DISCORD_WEBHOOK_URL = os.environ.get('DISCORD_WEBHOOK_URL')
 START_DATE_STR = os.environ.get('START_DATE')
 PLAN_FILE = "plan.md"
-CHEERUP_FILE = "cheerup.md"
+CHEERUP_FILE = "mission.md"
 
 def get_content_by_day(file_name, day_count):
     """파일에서 Day n에 해당하는 내용을 추출합니다."""
