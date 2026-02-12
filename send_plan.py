@@ -7,7 +7,7 @@ import re
 DISCORD_WEBHOOK_URL = os.environ.get('DISCORD_WEBHOOK_URL')
 START_DATE_STR = os.environ.get('START_DATE')
 PLAN_FILE = "plan.md"
-CHEERUP_FILE = "mission.md"
+MISSION_FILE = "mission.md"
 
 def get_content_by_day(file_name, day_count):
     """파일에서 Day n에 해당하는 내용을 추출합니다."""
@@ -38,7 +38,7 @@ def send_to_discord():
 
     # 내용 가져오기
     plan_text = get_content_by_day(PLAN_FILE, day_count)
-    mission_text = get_content_by_day(CHEERUP_FILE, day_count)
+    mission_text = get_content_by_day(MISSION_FILE, day_count)
     
     if plan_text:
         # 미션 파일이 없거나 내용이 비어있으면 지정하신 기본 문구 사용
